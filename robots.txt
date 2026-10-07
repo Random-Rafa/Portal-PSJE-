@@ -1,2 +1,0 @@
-User-agent: *
-Disallow: /portal-8f3k2/
