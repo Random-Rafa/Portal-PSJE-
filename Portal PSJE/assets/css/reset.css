@@ -1,0 +1,40 @@
+/* =====================================================
+   RESET.CSS — Portal PSJE (Paróquia São João Evangelista)
+   Arquivo dedicado, separado do style.css de propósito.
+   ===================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, svg, video { display: block; max-width: 100%; }
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button { background: none; border: none; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+table { border-collapse: collapse; }
+h1, h2, h3, h4, h5, h6 { font-weight: inherit; font-size: inherit; }
+fieldset { border: none; }
+
+::selection { background-color: rgba(199, 154, 62, 0.35); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

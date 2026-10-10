@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doações — Paróquia São João Evangelista</title>
+<meta name="description" content="Formas de contribuir com a Paróquia São João Evangelista: Pix, cartão, transferência, roupas e alimentos não perecíveis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="doacoes">
+<div id="layout-top"></div>
+
+<main id="conteudo">
+  <section class="section" style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker"><span class="dot"></span>Apoie a paróquia</div>
+        <h1>Doações</h1>
+        <p>Sua contribuição sustenta a manutenção da igreja e as ações sociais da comunidade. Toda ajuda, em dinheiro ou em itens, faz diferença.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITAR: chave Pix e dados bancários são de exemplo. -->
+  <section class="section" style="padding-top:26px;">
+    <div class="wrap">
+      <div class="donate-grid">
+        <div class="donate-card">
+          <h3><svg class="icon icon-20"><use href="#i-pix"/></svg>Dízimo e doações financeiras</h3>
+          <p>Contribua via Pix a qualquer momento, ou combine uma doação recorrente na secretaria paroquial.</p>
+          <div class="pix-box">
+            <span class="pix-key" id="pixKey">doacoes@saojoaoevangelista.org.br</span>
+            <button class="btn btn-outline btn-sm" id="copyPix" type="button"><svg class="icon icon-14"><use href="#i-copy"/></svg> Copiar</button>
+          </div>
+          <div class="bank-list">
+            <div><span>Banco</span><span>Banco Exemplo</span></div>
+            <div><span>Agência</span><span>0000-1</span></div>
+            <div><span>Conta corrente</span><span>00000-0</span></div>
+          </div>
+        </div>
+        <div class="donate-card">
+          <h3><svg class="icon icon-20"><use href="#i-people"/></svg>Roupas e alimentos não perecíveis</h3>
+          <p>Também recebemos doações que ajudam diretamente famílias atendidas pela pastoral social da paróquia.</p>
+          <div class="item-list">
+            <span class="item-tag">Roupas em bom estado</span>
+            <span class="item-tag">Alimentos não perecíveis</span>
+            <span class="item-tag">Produtos de higiene</span>
+            <span class="item-tag">Cobertores e agasalhos</span>
+          </div>
+          <div class="bank-list">
+            <div><span>Onde entregar</span><span>Secretaria paroquial</span></div>
+            <div><span>Dias</span><span>Terça a sábado</span></div>
+            <div><span>Horário</span><span>9h às 17h</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap" style="max-width:760px;">
+      <div class="section-head">
+        <h2>Perguntas frequentes</h2>
+        <p>Dúvidas comuns sobre como doar.</p>
+      </div>
+      <details class="faq" open>
+        <summary>Posso doar sem me identificar?</summary>
+        <p>Sim. A doação via Pix não exige nenhum dado além do comprovante da transferência. Se preferir um recibo em nome próprio, basta falar com a secretaria paroquial.</p>
+      </details>
+      <details class="faq">
+        <summary>Como as doações são usadas?</summary>
+        <p>Os recursos sustentam a manutenção da igreja e das atividades pastorais, além de ações sociais realizadas junto a famílias da comunidade.</p>
+      </details>
+      <details class="faq">
+        <summary>Posso doar itens em vez de dinheiro?</summary>
+        <p>Sim. Aceitamos roupas em bom estado, alimentos não perecíveis, itens de higiene e cobertores na secretaria paroquial, de terça a sábado.</p>
+      </details>
+      <details class="faq">
+        <summary>Existe um valor mínimo para o dízimo?</summary>
+        <p>Não. O dízimo é uma contribuição livre e proporcional à possibilidade de cada família — o que importa é a participação, não o valor.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div>
+        <h3>Prefere ajudar de outra forma?</h3>
+        <p>Fale com uma das pastorais e conheça outras formas de servir a comunidade.</p>
+      </div>
+      <a href="contato.html" class="btn btn-gold">Falar com uma pastoral</a>
+    </div>
+  </section>
+</main>
+
+<div id="layout-bottom"></div>
+
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/doacoes.js"></script>
+</body>
+</html>

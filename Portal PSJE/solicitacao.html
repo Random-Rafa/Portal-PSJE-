@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicitação — Paróquia São João Evangelista</title>
+<meta name="description" content="Envie uma solicitação, dúvida ou pedido para a secretaria ou para uma pastoral da Paróquia São João Evangelista.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="solicitacao">
+<div id="layout-top"></div>
+
+<main id="conteudo">
+
+  <section class="page-intro wrap">
+    <h1>Solicitação</h1>
+    <p>Escreva sua mensagem e escolha para qual setor ela deve ser enviada. A secretaria ou a pastoral responsável responderá pelo contato informado.</p>
+  </section>
+
+  <section class="section">
+    <div class="wrap form-wrap">
+
+      <div id="solicitacaoStatus" class="form-status" role="status" aria-live="polite"></div>
+
+      <form id="solicitacaoForm" class="form-panel" novalidate>
+        <div class="field">
+          <label for="solNome">Nome completo *</label>
+          <input type="text" id="solNome" placeholder="Seu nome" autocomplete="name">
+          <span class="field-error"><svg class="icon icon-14"><use href="#i-alert-circle"/></svg>Informe seu nome completo.</span>
+        </div>
+
+        <div class="field">
+          <label for="solContato">E-mail ou celular para retorno *</label>
+          <input type="text" id="solContato" placeholder="seunome@gmail.com ou (00) 00000-0000" autocomplete="email">
+          <span class="hint">Usaremos este contato apenas para responder sua solicitação.</span>
+          <span class="field-error"><svg class="icon icon-14"><use href="#i-alert-circle"/></svg>Informe um e-mail ou celular válido.</span>
+        </div>
+
+        <div class="field">
+          <label for="solSetor">Enviar para *</label>
+          <select id="solSetor">
+            <option value="">Selecione um setor</option>
+            <option value="secretaria">Secretaria — dúvidas gerais</option>
+            <option value="familia">Pastoral da Família</option>
+            <option value="neocatecumenato">Caminho Neocatecumenal</option>
+            <option value="saude">Pastoral da Saúde</option>
+            <option value="catequese">Catequese</option>
+            <option value="dizimo">Pastoral do Dízimo</option>
+            <option value="crianca">Pastoral da Criança</option>
+            <option value="liturgia">Pastoral Litúrgica</option>
+            <option value="musica">Ministério de Música</option>
+            <option value="juventude">Pastoral da Juventude</option>
+            <option value="terceira-idade">Pastoral da Terceira Idade</option>
+          </select>
+          <span class="field-error"><svg class="icon icon-14"><use href="#i-alert-circle"/></svg>Selecione o setor de destino.</span>
+        </div>
+
+        <div class="field">
+          <label for="solMensagem">Mensagem *</label>
+          <textarea id="solMensagem" placeholder="Escreva sua dúvida, pedido ou informação aqui..."></textarea>
+          <span class="field-error"><svg class="icon icon-14"><use href="#i-alert-circle"/></svg>Escreva uma mensagem com pelo menos 10 caracteres.</span>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-block">Enviar solicitação</button>
+        <p class="hint" style="text-align:center;margin-top:12px;">Campos marcados com * são obrigatórios. Nenhuma mensagem é enviada de verdade neste protótipo.</p>
+      </form>
+
+      <div id="formSuccess" class="form-success">
+        <svg class="icon"><use href="#i-check-circle"/></svg>
+        <h2>Solicitação enviada</h2>
+        <p>Obrigado por escrever para a nossa comunidade. Sua mensagem foi encaminhada para <strong data-setor-nome>o setor selecionado</strong> e será respondida pelo contato informado.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div id="layout-bottom"></div>
+
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/solicitacao.js"></script>
+</body>
+</html>
