@@ -1,0 +1,34 @@
+/* =====================================================
+   TOKENS.CSS — Portal PSJE
+   Variáveis de cor, tipografia e layout. Carregado antes
+   de qualquer outro CSS do projeto (exceto reset.css).
+   ===================================================== */
+
+:root {
+  /* cor */
+  --ink: #1b2340;
+  --ink-2: #12172b;
+  --ink-soft: #4d5170;
+  --gold: #c79a3e;
+  --gold-dark: #916f22;
+  --gold-light: #e9d9ab;
+  --parchment: #f8f2e6;
+  --paper: #fffdf8;
+  --line: #ddd0ac;
+  --line-soft: #eee4cf;
+  --success: #3f7a57;
+  --success-bg: #eaf3ec;
+  --danger: #a3402f;
+  --danger-bg: #f7e9e5;
+  --shadow: rgba(27, 35, 64, 0.14);
+
+  /* tipografia */
+  --font-d: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-b: "Source Sans 3", -apple-system, "Segoe UI", sans-serif;
+
+  /* layout */
+  --header-h: 72px;
+  --maxw: 1160px;
+  --radius: 8px;
+  --radius-arch: 22px 22px 6px 6px;
+}
