@@ -1,0 +1,182 @@
+/* =====================================================
+   COMPONENTS.CSS — Portal PSJE
+   Blocos de interface reaproveitáveis: formulários, lista
+   de notícias, agenda de eventos + painel admin, contato
+   (secretaria/pastorais/mapa), doações e card de login.
+   ===================================================== */
+
+/* ---------- notícias ---------- */
+/* =========================================================
+   NOTÍCIAS (resumo na Home)
+   ========================================================= */
+.news-list { border-top: 1px solid var(--line); }
+.news-row { display: grid; grid-template-columns: 90px 1fr auto; gap: 24px; align-items: start; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.news-date { text-align: left; }
+.news-date .day { font-family: var(--font-d); font-size: 1.8rem; font-weight: 600; line-height: 1; }
+.news-date .month { display: block; font-size: 0.76rem; color: var(--ink-soft); margin-top: 4px; }
+.news-body h3 { font-size: 1.14rem; margin-bottom: 6px; }
+.news-tag { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; margin-bottom: 9px; border: 1px solid currentColor; }
+.news-tag.missa { color: var(--danger); }
+.news-tag.evento { color: var(--gold-dark); }
+.news-tag.aviso { color: var(--ink-soft); }
+.news-full { display: none; margin-top: 10px; }
+.news-row.expanded .news-full { display: block; }
+.news-foot { margin-top: 30px; text-align: center; }
+@media (max-width: 700px) {
+  .news-row { grid-template-columns: 56px 1fr; }
+  .news-row .news-more { grid-column: 1 / -1; justify-self: start; margin-top: 4px; }
+}
+
+/* ---------- eventos / agenda ---------- */
+/* =========================================================
+   EVENTOS (agenda completa)
+   ========================================================= */
+.schedule-card { background: var(--ink); color: var(--parchment); padding: 26px 28px; }
+.schedule-card h3 { color: var(--parchment); font-size: 1.06rem; margin-bottom: 14px; }
+.schedule-row { display: flex; justify-content: space-between; gap: 14px; padding: 9px 0; border-bottom: 1px solid rgba(248,242,230,.16); font-size: 0.9rem; }
+.schedule-row:last-child { border-bottom: 0; }
+.schedule-row span:first-child { color: #c9cde2; }
+.schedule-row span:last-child { font-weight: 600; }
+
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; }
+.filter-btn { background: var(--paper); border: 1px solid var(--line); padding: 8px 16px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; color: var(--ink-soft); }
+.filter-btn.active { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+.filter-btn:hover:not(.active) { border-color: var(--ink); }
+
+.event-list { display: flex; flex-direction: column; gap: 14px; }
+.event-card { display: flex; gap: 18px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; align-items: flex-start; }
+.event-date { flex-shrink: 0; width: 60px; text-align: center; background: var(--ink); color: var(--parchment); border-radius: var(--radius-arch); padding: 10px 2px; }
+.event-date .day { font-family: var(--font-d); font-weight: 600; font-size: 1.35rem; line-height: 1; display: block; }
+.event-date .month { font-size: 0.64rem; letter-spacing: .03em; color: var(--gold-light); display: block; margin-top: 3px; }
+.event-body { flex: 1; min-width: 0; }
+.event-cat { font-size: 0.7rem; color: var(--gold-dark); font-weight: 700; margin-bottom: 3px; }
+.event-title { font-family: var(--font-d); font-weight: 600; font-size: 1.04rem; }
+.event-meta { font-size: 0.8rem; color: var(--ink-soft); display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; }
+.event-meta span { display: inline-flex; align-items: center; gap: 5px; }
+.event-desc { font-size: 0.88rem; margin-top: 8px; }
+.event-admin-row { margin-top: 10px; }
+.empty-state { padding: 40px 20px; text-align: center; color: var(--ink-soft); border: 1px dashed var(--line); border-radius: var(--radius); }
+
+@media (max-width: 560px) {
+  .event-card { flex-direction: column; }
+  .event-date { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--radius); padding: 8px; }
+}
+
+/* painel admin (aparece só se houver sessão) */
+.admin-panel { background: var(--paper); border: 1px solid var(--gold); border-radius: var(--radius); padding: 24px; margin-bottom: 32px; }
+.admin-panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+.admin-panel-head h3 { font-size: 1.04rem; }
+.admin-badge { background: var(--gold-light); color: var(--gold-dark); font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+.guest-note { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; margin-bottom: 30px; font-size: 0.9rem; color: var(--ink-soft); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field.full { grid-column: 1 / -1; }
+
+/* ---------- formulários ---------- */
+/* =========================================================
+   FORMULÁRIOS
+   ========================================================= */
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.field label { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+.field input, .field select, .field textarea {
+  padding: 11px 13px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--parchment); font-size: 0.94rem; color: var(--ink); width: 100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--ink); }
+.field textarea { min-height: 130px; resize: vertical; }
+.hint { font-size: 0.78rem; color: var(--ink-soft); }
+.field.has-error input, .field.has-error select, .field.has-error textarea { border-color: var(--danger); }
+.field-error { font-size: 0.78rem; color: var(--danger); display: none; align-items: center; gap: 5px; margin-top: 2px; }
+.field.has-error .field-error { display: flex; }
+
+.form-status { display: none; gap: 10px; align-items: flex-start; padding: 14px 16px; border-radius: var(--radius); font-size: 0.88rem; margin-bottom: 20px; }
+.form-status.show { display: flex; }
+.form-status.success { background: var(--success-bg); border: 1px solid var(--success); color: #215436; }
+.form-status.error { background: var(--danger-bg); border: 1px solid var(--danger); color: #6e2a1c; }
+.form-status .icon { margin-top: 1px; }
+
+.form-panel { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 38px; }
+.form-panel.hidden { display: none; }
+.form-wrap { max-width: 620px; margin: 0 auto; }
+
+.form-success { display: none; text-align: center; padding: 52px 36px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.form-success.visible { display: block; }
+.form-success .icon { color: var(--success); margin: 0 auto 18px; width: 46px; height: 46px; }
+.form-success h2 { font-size: 1.35rem; margin-bottom: 10px; }
+.form-success p { margin: 0 auto; }
+
+@media (max-width: 700px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* ---------- contato ---------- */
+/* =========================================================
+   CONTATO (secretaria + pastorais — sem formulário)
+   ========================================================= */
+.secretaria-panel { background: var(--ink); color: var(--parchment); border-radius: var(--radius); padding: 36px; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+.secretaria-panel h2 { color: var(--parchment); font-size: 1.5rem; margin-bottom: 10px; }
+.secretaria-panel p { color: #cfd3ea; }
+.secretaria-info { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 18px; }
+.secretaria-info div span { display: block; font-size: 0.76rem; color: var(--gold); margin-bottom: 3px; }
+.secretaria-info div strong { font-size: 0.96rem; }
+@media (max-width: 700px) { .secretaria-panel { grid-template-columns: 1fr; } }
+
+.pastoral-list { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+.pastoral-item { display: flex; justify-content: space-between; align-items: center; gap: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+.pastoral-item strong { display: block; font-size: 0.98rem; }
+.pastoral-item span { font-size: 0.82rem; color: var(--ink-soft); }
+.wa-link { flex-shrink: 0; display: inline-flex; align-items: center; gap: 7px; background: var(--success); color: #fff; padding: 9px 15px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; }
+.wa-link:hover { background: #336547; }
+@media (max-width: 620px) { .pastoral-item { flex-direction: column; align-items: flex-start; } }
+
+.address-card { background: var(--ink); color: #fff; border-radius: var(--radius); padding: 22px; margin-top: 30px; }
+.address-card .icon { color: var(--gold-light); margin-bottom: 10px; }
+.address-card p { color: #cfd3ea; margin-bottom: 4px; font-size: 0.9rem; }
+.address-card p strong { color: #fff; }
+
+.whatsapp-note { margin-top: 26px; font-size: 0.85rem; color: var(--ink-soft); border-left: 3px solid var(--gold); padding-left: 14px; }
+
+/* mini mapa (Google Maps, incorporado via iframe — sem chave de API)
+   — discreto de propósito: pequeno, sem destaque visual forte. */
+.map-wrap { margin-top: 20px; max-width: 280px; }
+.map-frame { width: 100%; aspect-ratio: 1 / 1; border: 0; display: block; border-radius: var(--radius); filter: saturate(.8); opacity: .92; }
+.map-actions { margin-top: 8px; }
+.map-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--ink-soft); }
+.map-link:hover { color: var(--ink); text-decoration: underline; }
+
+/* ---------- doações ---------- */
+/* =========================================================
+   DOAÇÕES
+   ========================================================= */
+.donate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.donate-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+.donate-card h3 { font-size: 1.1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.donate-card h3 .icon { color: var(--gold-dark); }
+.donate-card p { font-size: 0.92rem; }
+
+.pix-box { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--parchment); border: 1px dashed var(--gold); border-radius: var(--radius); padding: 13px 15px; margin-top: 16px; }
+.pix-key { font-family: monospace; font-size: 0.83rem; word-break: break-all; }
+
+.bank-list { margin-top: 14px; font-size: 0.9rem; }
+.bank-list div { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid var(--line-soft); }
+.bank-list div:last-child { border-bottom: 0; }
+
+.item-list { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.item-tag { background: var(--parchment); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 0.82rem; color: var(--ink-soft); }
+
+details.faq { border-bottom: 1px solid var(--line-soft); padding: 15px 0; }
+details.faq summary { font-weight: 600; cursor: pointer; font-size: 0.96rem; }
+details.faq summary::marker { color: var(--gold-dark); }
+details.faq p { margin-top: 10px; font-size: 0.9rem; }
+
+@media (max-width: 780px) { .donate-grid { grid-template-columns: 1fr; } }
+
+/* ---------- login administrativo ---------- */
+/* =========================================================
+   LOGIN ADMINISTRATIVO (portal-8f3k2/entrar.html)
+   ========================================================= */
+.login-wrap { max-width: 440px; margin: 0 auto; padding: 64px 20px 80px; }
+.login-card { background: var(--paper); border: 1px solid var(--line); padding: 38px 34px; }
+.login-icon { width: 46px; height: 46px; color: var(--ink); background: var(--gold-light); border-radius: 50%; padding: 11px; margin: 0 auto 18px; }
+.login-card h1 { font-size: 1.4rem; text-align: center; }
+.login-card > p { text-align: center; font-size: 0.9rem; margin-top: 8px; margin-bottom: 26px; }
+.back-link { display: flex; justify-content: center; margin-top: 22px; font-size: 0.85rem; }
+.back-link a { color: var(--ink); font-weight: 600; }
