@@ -8,7 +8,7 @@
   function readTheme() {
     try {
       var saved = localStorage.getItem(STORAGE_KEY);
-      returan saved === 'dark' || saved === 'light' ? saved : 'light';
+      return saved === 'dark' || saved === 'light' ? saved : 'light';
     } catch (error) {
       return 'light';
     }
